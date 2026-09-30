@@ -1,31 +1,30 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: DoAção
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Reis Nametala
+    given-names: Arthur
+  - family-names: Henrique Castilho Ricoy Guerra
+    given-names: Matheus
+  - family-names: Fiúza Almeida
+    given-names: Lucas
+  - family-names: Faria Milan Procópio
+    given-names: Gabriel
+  - family-names: Araújo Asth
+    given-names: Lucas
+  - family-names: Carneiro de Castro Santos
+    given-names: Daniel
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Vieira Carneiro
+    given-names: Rommel
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Silva Tavares
+    given-names: Cleiton
 keywords:
-  - 
-  - 
-repository-code: 
+  - doação de sangue
+  - hemocentros
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2026-2-ti2-7587100-doacao.git
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
