@@ -1,18 +1,24 @@
-# [Nome do projeto]
+# DoAção
 
-[Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
+O objetivo do DoAção é aumentar a doação de sangue em Minas Gerais por meio da redução das barreiras de informação que dificultam a ida e a permanência dos doadores nos hemocentros.
+
+A proposta é oferecer, de forma simples e acessível, informações sobre a elegibilidade para doação, o processo de atendimento e a necessidade atual dos estoques. Dessa forma, o projeto busca preparar o doador antes de sua ida ao hemocentro, reduzir dúvidas e inseguranças e facilitar a decisão de doar.
+
+Além disso, o DoAção pretende manter o doador informado sobre os momentos em que sua doação é necessária, fortalecendo a recorrência das doações e aproximando a população das necessidades dos hemocentros.
 
 ## Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Nome completo do aluno 3]
-* [Nome completo do aluno 4]
+* Arthur Reis Nametala
+* Matheus Henrique Castilho Ricoy Guerra
+* Lucas Fiúza Almeida
+* Gabriel Faria Milan Procópio
+* Lucas Araújo Asth
+* Daniel Carneiro de Castro Santos
 
 ## Professores responsáveis
 
-* [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* Rommel Vieira Carneiro
+* Cleiton Silva Tavares
 
 ## Instruções de utilização
 
