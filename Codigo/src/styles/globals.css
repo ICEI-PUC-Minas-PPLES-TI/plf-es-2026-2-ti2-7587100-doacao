@@ -1,0 +1,34 @@
+:root {
+  --wine: #d20a4d;
+  --wine-dark: #a7083e;
+  --pink-bg: #f9e9ef;
+  --pink-soft: #fff5f8;
+  --ink: #252127;
+  --muted: #6d6268;
+  --line: #ead7de;
+  --white: #fff;
+  --shadow: 0 8px 28px rgba(91, 36, 57, .10);
+}
+* { box-sizing: border-box; }
+html, body, #__next { margin: 0; min-height: 100%; }
+body { background: var(--pink-bg); color: var(--ink); font-family: Inter, Arial, Helvetica, sans-serif; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+.app-shell { min-height: 100vh; padding-bottom: 78px; }
+.topbar { width: min(100%, 720px); margin: auto; padding: 20px 22px 8px; display: flex; align-items: center; justify-content: space-between; }
+.brand { text-decoration: none; }
+.brand-drop { width: 46px; height: 54px; display: grid; place-items: center; background: var(--wine); color: white; font-size: 20px; border-radius: 50% 50% 55% 45% / 58% 58% 42% 42%; transform: rotate(45deg); }
+.brand-drop::first-letter { transform: rotate(-45deg); }
+.help-button { height: 46px; padding: 0 18px; display: flex; align-items: center; gap: 8px; border: 1.5px solid #8e8086; border-radius: 999px; background: white; color: #2c2729; font-weight: 600; cursor: pointer; }
+.page-content { width: min(100%, 720px); margin: auto; padding: 0 22px 30px; }
+.bottom-nav { position: fixed; z-index: 50; inset: auto 0 0; height: 72px; background: white; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, 1fr); box-shadow: 0 -5px 20px rgba(70,20,40,.07); }
+.nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: #494249; text-decoration: none; font-size: 12px; }
+.nav-icon { font-size: 21px; line-height: 1; }
+.nav-item.active { color: var(--wine); font-weight: 700; background: #fff4f7; }
+.loading-page { text-align: center; padding: 80px 20px; color: var(--muted); }
+@media (min-width: 780px) {
+  .app-shell { padding-bottom: 92px; }
+  .topbar, .page-content { width: min(100%, 980px); }
+  .bottom-nav { left: 50%; right: auto; width: min(100%, 760px); transform: translateX(-50%); border: 1px solid var(--line); border-bottom: 0; border-radius: 24px 24px 0 0; }
+}
