@@ -53,3 +53,7 @@
   .navbar-button { height: 42px; padding: 0 14px; }
   .navbar-button span:last-child { font-size: 14px; }
 }
+
+.navbar-button {
+  text-decoration: none;
+}

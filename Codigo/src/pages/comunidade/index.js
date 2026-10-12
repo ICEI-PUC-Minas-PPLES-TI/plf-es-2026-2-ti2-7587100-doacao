@@ -30,7 +30,13 @@ function CartaoEvento({ evento }) {
         {evento.descricao && <p className={styles.description}>{evento.descricao}</p>}
         <span className={styles.tag}>ⓘ Evento da comunidade</span>
       </div>
-      <span className={styles.arrow} aria-hidden="true">›</span>
+      <Link
+        className={styles.arrow}
+        href={"/comunidade/eventos/" + evento.id}
+        aria-label={"Abrir detalhes do evento " + evento.nome}
+      >
+        ›
+      </Link>
     </article>
   );
 }
@@ -63,9 +69,9 @@ export default function Comunidade() {
       </header>
 
       <nav className={styles.tabs} aria-label="Seções da comunidade">
-        <button type="button">Feed</button>
-        <button type="button" className={styles.activeTab}>Eventos</button>
-        <button type="button">Fórum</button>
+        <Link href="/comunidade/feed">Feed</Link>
+        <Link href="/comunidade" className={styles.activeTab} aria-current="page">Eventos</Link>
+        <Link href="/comunidade/forum">Fórum</Link>
       </nav>
 
       <Link className={styles.createButton} href="/comunidade/cadastro">＋ Criar evento</Link>

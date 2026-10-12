@@ -9,10 +9,10 @@ export default function NavbarSuperior() {
         </Link>
 
         <div className="navbar-actions">
-          <button type="button" className="navbar-button">
+          <Link href="/duvidas" className="navbar-button">
             <span className="navbar-button-icon" aria-hidden="true">✦</span>
             <span>Tire dúvidas</span>
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

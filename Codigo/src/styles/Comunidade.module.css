@@ -29,3 +29,20 @@
   .card { grid-template-columns: 56px 1fr; }
   .arrow { display: none; }
 }
+
+.tabs a {
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--ink);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.arrow {
+  text-decoration: none;
+}
+
+.arrow:hover {
+  color: var(--wine);
+}
