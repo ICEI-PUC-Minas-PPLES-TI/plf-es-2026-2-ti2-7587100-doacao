@@ -26,3 +26,20 @@ describe("validarEvento", () => {
     expect(resultado.evento.local).toBe("Belo Horizonte");
   });
 });
+
+describe("filtrarEventos", () => {
+  const eventos = [
+    { nome: "Mutirão de doação", local: "Belo Horizonte" },
+    { nome: "Encontro de doadores", local: "Contagem" }
+  ];
+
+  it("pesquisa pelo nome ignorando acentos e letras maiúsculas", async () => {
+    const { filtrarEventos } = await import("./eventos.js");
+    expect(filtrarEventos(eventos, "MUTIRAO")).toEqual([eventos[0]]);
+  });
+
+  it("pesquisa também pelo local", async () => {
+    const { filtrarEventos } = await import("./eventos.js");
+    expect(filtrarEventos(eventos, "contagem")).toEqual([eventos[1]]);
+  });
+});

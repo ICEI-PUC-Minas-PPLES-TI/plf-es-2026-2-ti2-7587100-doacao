@@ -3,61 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criar evento | DoAção</title>
+  <title>Eventos da comunidade | DoAção</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <main class="pagina">
     <header class="topo">
-      <a class="marca" href="#" aria-label="DoAção">♥</a>
+      <a class="marca" href="./index.html" aria-label="DoAção">♥</a>
       <button class="ajuda" type="button">▤ Tire dúvidas</button>
     </header>
 
     <section class="cabecalho">
-      <span>Comunidade</span>
-      <h1>Criar evento</h1>
-      <p>Preencha os dados para divulgar uma ação de doação de sangue.</p>
+      <span>Conecte-se para transformar</span>
+      <h1>Comunidade</h1>
+      <p>Encontre campanhas próximas e mobilize pessoas para doar.</p>
     </section>
 
-    <form id="form-evento" class="formulario" novalidate>
-      <label>
-        Nome do evento
-        <input name="nome" type="text" placeholder="Ex.: Mutirão de doação">
-        <small data-erro="nome"></small>
-      </label>
+    <nav class="abas" aria-label="Seções da comunidade">
+      <a href="#">Feed</a>
+      <a class="ativa" href="./index.html">Eventos</a>
+      <a href="#">Fórum</a>
+    </nav>
 
-      <label>
-        Descrição
-        <textarea name="descricao" rows="4" placeholder="Conte brevemente como será o evento"></textarea>
-      </label>
+    <a class="criar-evento" href="./cadastro.html">＋ Criar evento</a>
 
-      <div class="linha">
-        <label>
-          Data
-          <input name="data" type="date">
-          <small data-erro="data"></small>
-        </label>
+    <label class="busca">
+      <span aria-hidden="true">⌕</span>
+      <input id="busca-eventos" type="search" placeholder="Buscar eventos por nome ou local">
+    </label>
 
-        <label>
-          Horário
-          <input name="horario" type="time">
-          <small data-erro="horario"></small>
-        </label>
+    <div class="titulo-lista">
+      <div>
+        <span>Agenda da comunidade</span>
+        <h2>Próximos eventos</h2>
       </div>
+      <strong id="contador-eventos">Carregando...</strong>
+    </div>
 
-      <label>
-        Local
-        <input name="local" type="text" placeholder="Cidade ou endereço">
-        <small data-erro="local"></small>
-      </label>
-
-      <p id="mensagem-sucesso" class="sucesso" role="status" hidden>Evento salvo com sucesso.</p>
-
-      <div class="acoes">
-        <button class="secundario" type="reset">Cancelar</button>
-        <button class="primario" type="submit">Salvar evento</button>
-      </div>
-    </form>
+    <section id="lista-eventos" class="lista-eventos" aria-live="polite"></section>
   </main>
 
   <script type="module" src="./js/eventos.js"></script>

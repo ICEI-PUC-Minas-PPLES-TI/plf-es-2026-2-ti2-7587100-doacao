@@ -156,3 +156,124 @@ button, input, textarea { font: inherit; }
   .linha { grid-template-columns: 1fr; }
   .acoes { display: grid; grid-template-columns: 1fr 1fr; }
 }
+
+.abas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+  border-radius: 14px;
+  background: var(--branco);
+  box-shadow: 0 8px 28px rgba(91, 36, 57, .10);
+}
+
+.abas a {
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--texto);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.abas .ativa {
+  background: var(--vinho);
+  color: var(--branco);
+}
+
+.criar-evento {
+  margin: 16px 0;
+  padding: 15px;
+  display: block;
+  border: 1.5px solid var(--vinho);
+  border-radius: 12px;
+  background: var(--branco);
+  color: var(--vinho);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.busca {
+  height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #cbbbc1;
+  border-radius: 12px;
+  background: var(--branco);
+}
+
+.busca input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+}
+
+.titulo-lista {
+  margin: 25px 0 13px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.titulo-lista span {
+  color: var(--vinho);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.titulo-lista h2 { margin: 5px 0 0; }
+.titulo-lista > strong { color: var(--cinza); font-size: 13px; }
+
+.lista-eventos { display: grid; gap: 14px; }
+
+.cartao-evento {
+  padding: 17px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  border: 1px solid #f0dfe5;
+  border-radius: 16px;
+  background: var(--branco);
+  box-shadow: 0 8px 28px rgba(91, 36, 57, .10);
+}
+
+.data-evento {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #fff0f5;
+  color: var(--vinho);
+}
+
+.data-evento strong { font-size: 24px; line-height: 1; }
+.data-evento span { margin-top: 4px; font-size: 11px; font-weight: 800; }
+
+.conteudo-evento h3 { margin: 0; font-size: 18px; }
+.conteudo-evento p { margin: 6px 0; color: var(--cinza); font-size: 13px; line-height: 1.4; }
+
+.etiqueta {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 99px;
+  background: #f9e8ef;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.estado-vazio {
+  padding: 32px;
+  border: 1px dashed #c9aeb8;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .65);
+  text-align: center;
+  color: var(--cinza);
+}
