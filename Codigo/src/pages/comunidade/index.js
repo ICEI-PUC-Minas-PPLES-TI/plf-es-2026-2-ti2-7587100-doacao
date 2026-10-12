@@ -44,6 +44,7 @@ function CartaoEvento({ evento }) {
 export default function Comunidade() {
   const [eventos, setEventos] = useState([]);
   const [busca, setBusca] = useState("");
+  const [abaAtiva, setAbaAtiva] = useState("eventos");
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
 
@@ -69,31 +70,56 @@ export default function Comunidade() {
       </header>
 
       <nav className={styles.tabs} aria-label="Seções da comunidade">
-        <Link href="/comunidade/feed">Feed</Link>
-        <Link href="/comunidade" className={styles.activeTab} aria-current="page">Eventos</Link>
-        <Link href="/comunidade/forum">Fórum</Link>
+        <button
+          type="button"
+          className={abaAtiva === "feed" ? styles.activeTab : ""}
+          aria-pressed={abaAtiva === "feed"}
+          onClick={() => setAbaAtiva("feed")}
+        >
+          Feed
+        </button>
+        <button
+          type="button"
+          className={abaAtiva === "eventos" ? styles.activeTab : ""}
+          aria-pressed={abaAtiva === "eventos"}
+          onClick={() => setAbaAtiva("eventos")}
+        >
+          Eventos
+        </button>
+        <button
+          type="button"
+          className={abaAtiva === "forum" ? styles.activeTab : ""}
+          aria-pressed={abaAtiva === "forum"}
+          onClick={() => setAbaAtiva("forum")}
+        >
+          Fórum
+        </button>
       </nav>
 
-      <Link className={styles.createButton} href="/comunidade/cadastro">＋ Criar evento</Link>
+      {abaAtiva === "eventos" && (
+        <>
+          <Link className={styles.createButton} href="/comunidade/cadastro">＋ Criar evento</Link>
 
-      <label className={styles.search}>
-        <span aria-hidden="true">⌕</span>
-        <input type="search" value={busca} onChange={(event) => setBusca(event.target.value)} placeholder="Buscar eventos por nome ou local" />
-      </label>
+          <label className={styles.search}>
+            <span aria-hidden="true">⌕</span>
+            <input type="search" value={busca} onChange={(event) => setBusca(event.target.value)} placeholder="Buscar eventos por nome ou local" />
+          </label>
 
-      <div className={styles.listTitle}>
-        <div><span>Agenda da comunidade</span><h2>Próximos eventos</h2></div>
-        {!carregando && !erro && <strong>{eventosVisiveis.length} {eventosVisiveis.length === 1 ? "evento" : "eventos"}</strong>}
-      </div>
+          <div className={styles.listTitle}>
+            <div><span>Agenda da comunidade</span><h2>Próximos eventos</h2></div>
+            {!carregando && !erro && <strong>{eventosVisiveis.length} {eventosVisiveis.length === 1 ? "evento" : "eventos"}</strong>}
+          </div>
 
-      {carregando && <p className={styles.message}>Carregando eventos...</p>}
-      {erro && <p className={styles.error}>{erro}</p>}
-      {!carregando && !erro && (
-        <div className={styles.list}>
-          {eventosVisiveis.length
-            ? eventosVisiveis.map((evento) => <CartaoEvento key={evento.id} evento={evento} />)
-            : <p className={styles.empty}>Nenhum evento encontrado.</p>}
-        </div>
+          {carregando && <p className={styles.message}>Carregando eventos...</p>}
+          {erro && <p className={styles.error}>{erro}</p>}
+          {!carregando && !erro && (
+            <div className={styles.list}>
+              {eventosVisiveis.length
+                ? eventosVisiveis.map((evento) => <CartaoEvento key={evento.id} evento={evento} />)
+                : <p className={styles.empty}>Nenhum evento encontrado.</p>}
+            </div>
+          )}
+        </>
       )}
     </section>
   );
