@@ -122,6 +122,31 @@ export function lerCadastros(storage) {
   return eventos;
 }
 
+export function editarCadastro(storage, id, dados) {
+  const erros = validarCadastro(dados);
+  if (Object.keys(erros).length > 0) {
+    throw new Error('Revise os campos.');
+  }
+
+  const eventos = lerCadastros(storage);
+  const posicao = eventos.findIndex(evento => evento.id === id);
+  if (posicao === -1) {
+    throw new Error('Evento não encontrado neste navegador.');
+  }
+
+  const evento = {
+    ...eventos[posicao],
+    nome: retirarEspacos(dados.nome),
+    descricao: retirarEspacos(dados.descricao),
+    data: dados.data,
+    horario: dados.horario,
+    local: retirarEspacos(dados.local)
+  };
+  eventos[posicao] = evento;
+  storage.setItem(chave, JSON.stringify(eventos));
+  return evento;
+}
+
 export function salvarCadastro(storage, dados) {
   const erros = validarCadastro(dados);
   if (Object.keys(erros).length > 0) {

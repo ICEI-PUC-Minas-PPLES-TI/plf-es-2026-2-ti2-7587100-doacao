@@ -8,15 +8,23 @@ export default function EventoDetalhes() {
   const router = useRouter();
   const [evento, setEvento] = useState(null);
   const [erro, setErro] = useState('');
+  const [podeEditar, setPodeEditar] = useState(false);
   useEffect(() => {
     if (!router.isReady) return;
     let ativo = true;
     setEvento(null);
     setErro('');
+    setPodeEditar(false);
     async function carregar() {
       try {
         const local = lerCadastros(window.localStorage).find(item => item.id === router.query.id);
-        if (local) { if (ativo) setEvento(local); return; }
+        if (local) {
+          if (ativo) {
+            setEvento(local);
+            setPodeEditar(true);
+          }
+          return;
+        }
         const resposta = await fetch('/modulos/Lucas-asth-sprint1/eventos-iniciais.json');
         if (!resposta.ok) throw Error();
         const dados = await resposta.json();
@@ -45,6 +53,10 @@ export default function EventoDetalhes() {
         <Link href="/comunidade" className={styles.back}>
           <span aria-hidden="true">←</span> Voltar para eventos
         </Link>
+
+        {podeEditar && (
+          <p><Link className={styles.back} href={'/comunidade/cadastro?editar=' + evento.id}>Editar evento</Link></p>
+        )}
 
         <section className={styles.hero}>
           <div className={styles.date}><strong>{dia}</strong><span>{mes}</span></div>
