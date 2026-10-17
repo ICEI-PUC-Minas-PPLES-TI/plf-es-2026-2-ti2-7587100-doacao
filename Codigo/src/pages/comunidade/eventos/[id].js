@@ -1,29 +1,33 @@
-import fs from "node:fs";
-import path from "node:path";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { lerCadastros } from '../../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
 import Link from "next/link";
 import styles from "../../../styles/EventoDetalhes.module.css";
 
-function lerEventos() {
-  const arquivo = path.join(process.cwd(), "public", "modulos", "Lucas-asth-sprint1", "eventos-iniciais.json");
-  const conteudo = fs.readFileSync(arquivo, "utf8").replace(/^\uFEFF/, "");
-  return JSON.parse(conteudo);
-}
-
-export async function getStaticPaths() {
-  const eventos = lerEventos();
-  return {
-    paths: eventos.map((evento) => ({ params: { id: evento.id } })),
-    fallback: false
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const evento = lerEventos().find((item) => item.id === params.id);
-  if (!evento) return { notFound: true };
-  return { props: { evento } };
-}
-
-export default function EventoDetalhes({ evento }) {
+export default function EventoDetalhes() {
+  const router = useRouter();
+  const [evento, setEvento] = useState(null);
+  const [erro, setErro] = useState('');
+  useEffect(() => {
+    if (!router.isReady) return;
+    let ativo = true;
+    setEvento(null);
+    setErro('');
+    async function carregar() {
+      try {
+        const local = lerCadastros(window.localStorage).find(item => item.id === router.query.id);
+        if (local) { if (ativo) setEvento(local); return; }
+        const resposta = await fetch('/modulos/Lucas-asth-sprint1/eventos-iniciais.json');
+        if (!resposta.ok) throw Error();
+        const dados = await resposta.json();
+        const encontrado = dados.find(item => item.id === router.query.id);
+        if (ativo) { if (encontrado) setEvento(encontrado); else setErro('Evento não encontrado neste navegador.'); }
+      } catch { if (ativo) setErro('Não foi possível carregar o evento. Tente atualizar a página.'); }
+    }
+    carregar();
+    return () => { ativo = false; };
+  }, [router.isReady, router.query.id]);
+  if (!evento) return <section className={styles.page}><Link href="/comunidade">← Voltar para eventos</Link><p role={erro ? 'alert' : 'status'}>{erro || 'Carregando evento…'}</p></section>;
   const data = new Date(evento.data + "T12:00:00Z");
   const dia = String(data.getUTCDate()).padStart(2, "0");
   const mes = new Intl.DateTimeFormat("pt-BR", { month: "short", timeZone: "UTC" })

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import styles from "../../styles/Comunidade.module.css";
+import { lerCadastros } from '../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
 
 function normalizarTexto(valor = "") {
   return String(valor).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
@@ -54,7 +55,7 @@ export default function Comunidade() {
         if (!resposta.ok) throw new Error("Falha ao carregar eventos.");
         return resposta.json();
       })
-      .then((dados) => setEventos(Array.isArray(dados) ? dados : []))
+      .then((dados) => setEventos([...(Array.isArray(dados) ? dados : []), ...lerCadastros(window.localStorage)]))
       .catch(() => setErro("Não foi possível carregar os eventos."))
       .finally(() => setCarregando(false));
   }, []);
@@ -102,7 +103,7 @@ export default function Comunidade() {
 
           <label className={styles.search}>
             <span aria-hidden="true">⌕</span>
-            <input type="search" value={busca} onChange={(event) => setBusca(event.target.value)} placeholder="Buscar eventos por nome ou local" />
+            <input type="search" aria-label="Buscar eventos por nome ou local" value={busca} onChange={(event) => setBusca(event.target.value)} placeholder="Buscar eventos por nome ou local" />
           </label>
 
           <div className={styles.listTitle}>

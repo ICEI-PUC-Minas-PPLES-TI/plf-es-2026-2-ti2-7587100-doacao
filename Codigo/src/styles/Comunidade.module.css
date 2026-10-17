@@ -27,8 +27,12 @@
 @media (max-width: 520px) {
   .community { padding-right: 16px; padding-left: 16px; }
   .card { grid-template-columns: 56px 1fr; }
-  .arrow { display: none; }
+  .arrow { grid-column: 2; justify-self: end; }
 }
+
+.community :is(a, button, input):focus-visible { outline: 3px solid #245bb0; outline-offset: 4px; }
+.search:focus-within { outline: 3px solid #245bb0; outline-offset: 3px; }
+.arrow { min-width: 44px; min-height: 44px; text-align: center; }
 
 .tabs a {
   padding: 12px;
