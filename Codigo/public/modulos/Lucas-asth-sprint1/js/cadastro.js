@@ -122,6 +122,16 @@ export function lerCadastros(storage) {
   return eventos;
 }
 
+export function excluirCadastro(storage, id) {
+  const eventos = lerCadastros(storage);
+  const posicao = eventos.findIndex(evento => evento.id === id);
+  if (posicao === -1) {
+    throw new Error('Evento não encontrado neste navegador.');
+  }
+  eventos.splice(posicao, 1);
+  storage.setItem(chave, JSON.stringify(eventos));
+}
+
 export function editarCadastro(storage, id, dados) {
   const erros = validarCadastro(dados);
   if (Object.keys(erros).length > 0) {

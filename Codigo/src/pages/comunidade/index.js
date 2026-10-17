@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from "react";
 import styles from "../../styles/Comunidade.module.css";
 import { lerCadastros } from '../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
@@ -43,6 +44,7 @@ function CartaoEvento({ evento }) {
 }
 
 export default function Comunidade() {
+  const router = useRouter();
   const [eventos, setEventos] = useState([]);
   const [busca, setBusca] = useState("");
   const [abaAtiva, setAbaAtiva] = useState("eventos");
@@ -70,6 +72,7 @@ export default function Comunidade() {
         <p>Encontre campanhas próximas e mobilize pessoas para doar.</p>
       </header>
 
+      {router.query.excluido === '1' && <p role="status" className={styles.success}>Evento excluído com sucesso.</p>}
       <nav className={styles.tabs} aria-label="Seções da comunidade">
         <button
           type="button"

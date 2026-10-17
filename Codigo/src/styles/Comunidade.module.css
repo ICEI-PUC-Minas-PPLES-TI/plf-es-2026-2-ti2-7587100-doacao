@@ -1,5 +1,6 @@
 .community { width: min(100%, 720px); margin: 0 auto; padding: 8px 22px 105px; }
 .intro { padding: 8px 0 20px; }
+.success { padding: 16px; border: 1px solid #42805b; border-radius: 12px; background: #edf7ef; color: #205b34; line-height: 1.5; }
 .intro > span, .listTitle span { color: var(--wine); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .intro h1 { margin: 5px 0 7px; font-size: clamp(34px, 7vw, 48px); letter-spacing: -.04em; }
 .intro p { margin: 0; color: var(--muted); line-height: 1.5; }

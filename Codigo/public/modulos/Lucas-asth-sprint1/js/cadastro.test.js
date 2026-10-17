@@ -1,7 +1,25 @@
 import { expect, it } from 'vitest';
-import { validarCadastro, lerCadastros, salvarCadastro, editarCadastro } from './cadastro.js';
+import { validarCadastro, lerCadastros, salvarCadastro, editarCadastro, excluirCadastro } from './cadastro.js';
 
 const valido = { nome: ' Campanha ', descricao: '', data: '2099-10-26', horario: '09:00', local: ' BH ' };
+it('exclui somente o evento escolhido e rejeita um id inexistente', () => {
+  let valor = null;
+  const storage = { getItem: () => valor, setItem: (_, dado) => { valor = dado; } };
+  const primeiro = salvarCadastro(storage, valido);
+  const segundo = salvarCadastro(storage, { ...valido, nome: 'Outro evento' });
+  excluirCadastro(storage, primeiro.id);
+  expect(lerCadastros(storage)).toEqual([segundo]);
+  expect(() => excluirCadastro(storage, 'inexistente')).toThrow('Evento não encontrado');
+  expect(lerCadastros(storage)).toEqual([segundo]);
+});
+it('mantém o evento quando o armazenamento falha na exclusão', () => {
+  let valor = null;
+  const storage = { getItem: () => valor, setItem: (_, dado) => { valor = dado; } };
+  const evento = salvarCadastro(storage, valido);
+  storage.setItem = () => { throw new Error('Armazenamento indisponível'); };
+  expect(() => excluirCadastro(storage, evento.id)).toThrow('Armazenamento indisponível');
+  expect(lerCadastros(storage)).toEqual([evento]);
+});
 it('edita sem duplicar, preservando o id e os participantes', () => {
   let valor = null;
   const storage = { getItem: () => valor, setItem: (_, dado) => { valor = dado; } };
