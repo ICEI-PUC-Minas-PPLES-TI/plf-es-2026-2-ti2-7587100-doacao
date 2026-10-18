@@ -283,3 +283,81 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 | Controle de tarefas (Kanban) | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PPLES-TI/projects/914 |
 | Comunicação | WhatsApp | Grupo interno |
 | Comunicação | Discord | Grupo interno |
+
+## Divisão de Papéis
+
+Todos os integrantes participaram das atividades coletivas no Miro. A tabela abaixo mostra as principais contribuições de cada um até agora e o papel previsto para a fase de desenvolvimento, que ainda não começou.
+
+| Integrante | Principais contribuições até agora | Papel previsto no desenvolvimento |
+| ---------- | ---------------------------------- | --------------------------------- |
+| Arthur Reis Nametala | Condução das etapas de Design Thinking; entrevistas qualitativas; apoio na criação dos wireframes. | Banco de dados e Front-end |
+| Daniel Carneiro de Castro Santos | Entrevistas qualitativas; elaboração do pitch deck e da apresentação; organização das reuniões da equipe. | Back-end e API |
+| Gabriel Faria Milan Procópio | Matriz CSD e mapa de stakeholders; apoio na consolidação dos requisitos. | Banco de dados |
+| Lucas Araújo Asth | Entrevistas qualitativas; descrição do minimundo. | Back-end e API |
+| Lucas Fiúza Almeida | Entrevistas qualitativas; documentação do projeto. | Documentação e testes |
+| Matheus Henrique Castilho Ricoy Guerra | Responsável pelos wireframes e pelo protótipo no Figma. | Front-end e UI |
+
+## Gerenciamento do Projeto
+
+As tarefas são acompanhadas em um quadro Kanban no GitHub Projects, vinculado ao repositório do projeto, com as colunas **A fazer**, **Em andamento** e **Concluído**. Cada tarefa é registrada como uma issue no repositório (15 no total, de #1 a #15), com descrição e responsáveis.
+
+* Quadro Kanban: https://github.com/orgs/ICEI-PUC-Minas-PPLES-TI/projects/914
+* Issues: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2026-2-ti2-7587100-doacao/issues
+
+Situação do quadro no momento da entrega da fase de Concepção: com o fim da fase de Design Thinking, todas as tarefas de pesquisa, definição e prototipagem estão concluídas, e as próximas tarefas são as sprints de desenvolvimento, que ainda não começaram.
+
+| Status | Tarefa | Responsáveis |
+| ------ | ------ | ------------ |
+| A fazer | Sprint 1: layout responsivo e cadastros (RF-01) | Front-end e back-end |
+| A fazer | Sprint 2: pré-triagem, agendamento e alertas (RF-02 a RF-05) | Equipe |
+| A fazer | Sprint 3: funcionalidades importantes, integração e testes | Equipe |
+| A fazer | Implantação em plataforma PaaS | Back-end |
+| A fazer | Apresentação final | Equipe |
+| Concluído | Matriz CSD e mapa de stakeholders | Gabriel e equipe |
+| Concluído | Roteiro e entrevistas qualitativas | Arthur, Daniel, Lucas Asth e Lucas Fiúza |
+| Concluído | Highlights de pesquisa, personas e mapas de empatia | Equipe |
+| Concluído | Proposta de valor, requisitos e priorização | Equipe |
+| Concluído | Wireframes | Matheus e Arthur |
+| Concluído | User flow e protótipo interativo | Matheus e Arthur |
+| Concluído | Descrição do minimundo | Lucas Asth |
+| Concluído | Pitch deck e apresentação | Daniel |
+| Concluído | Documentação do projeto | Lucas Fiúza |
+| Concluído | Organização do repositório, issues e Project Board | Equipe |
+
+# Solução Implementada
+
+Esta seção apresentará todos os detalhes da solução criada no projeto. O desenvolvimento está no inicio, então os itens abaixo serão preenchidos ao longo das sprints.
+
+## Vídeo do Projeto
+
+[PREENCHER: link do vídeo de apresentação do projeto, quando houver]
+
+## Funcionalidades
+
+Esta seção apresentará as funcionalidades implementadas, seguindo a priorização da seção anterior. Para cada uma, o README deve trazer a descrição, a estrutura de dados, as instruções de acesso e a tela da funcionalidade.
+
+| ID | Funcionalidade | Status |
+| -- | -------------- | ------ |
+| RF-01 | Cadastro e perfil do doador | [PREENCHER] |
+| RF-02 | Pré-triagem online | [PREENCHER] |
+| RF-03 | Agendamento online | [PREENCHER] |
+| RF-04 | Alertas segmentados | [PREENCHER] |
+| RF-05 | Localização de hemocentros | [PREENCHER] |
+
+[PREENCHER: detalhar cada funcionalidade (descrição, instruções de acesso e imagem da tela) conforme forem sendo entregues]
+
+## Estruturas de Dados
+
+[PREENCHER: descrever as estruturas de dados (usuários, hemocentros, agendamentos, triagens etc.) com exemplos em JSON, conforme o banco de dados for definido]
+
+## Módulos e APIs
+
+[PREENCHER: listar as bibliotecas, fontes, ícones, scripts e APIs utilizados, conforme as tecnologias forem definidas]
+
+# Referências Bibliográficas
+
+G1. Hemominas alerta para estoques de sangue 45% abaixo do esperado em MG. **G1 Minas Gerais**, 12 ago. 2026. Disponível em: https://g1.globo.com/mg/minas-gerais/noticia/2026/08/12/hemominas-alerta-para-estoques-de-sangue-45percent-abaixo-do-esperado-em-mg.ghtml. Acesso em: set. 2026.
+
+ITATIAIA. Estoque de sangue O negativo entra em estado crítico na Fundação Hemominas. **Itatiaia**, 2026. Disponível em: https://www.itatiaia.com.br/saude/estoque-de-sangue-o-negativo-entra-em-estado-critico-na-fundacao-hemominas/. Acesso em: set. 2026.
+
+TV SIM BRASIL. Estoques de sangue em Minas Gerais alcançam níveis críticos. **TV Sim Brasil**, 2026. Disponível em: https://tvsimbrasil.com.br/noticias/estoques-de-sangue-em-minas-gerais-alcancam-niveis-criticos-1783704521. Acesso em: set. 2026.
