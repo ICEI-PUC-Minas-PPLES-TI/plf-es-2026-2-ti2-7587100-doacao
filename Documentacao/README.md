@@ -229,3 +229,57 @@ O resultado está organizado no Kanban de funcionalidades abaixo. Cada coluna co
 
 As funcionalidades obrigatórias formam o fluxo central do DoAção: o usuário se cadastra, verifica se está apto, encontra um hemocentro, agenda a doação e passa a receber avisos quando for necessário. As importantes reforçam a recorrência, que é o segundo objetivo do projeto. As desejáveis e opcionais tratam de comunidade e engajamento, e serão implementadas conforme o tempo disponível nas sprints.
 
+## Projeto de Interface
+
+Artefatos relacionados com a interface e a interação do usuário na proposta de solução. Os wireframes e o protótipo interativo foram feitos no Figma.
+
+[Wireframes e fluxo no Figma](https://www.figma.com/design/njJzqfUmrD8CigO7nbO1EH/Doação-de-sangue-Wireframes-e-fluxo)
+
+### Wireframes
+
+[Wireframe do Projeto](https://www.figma.com/design/njJzqfUmrD8CigO7nbO1EH/Doa%C3%A7%C3%A3o-de-sangue-%E2%80%94-Wireframes-e-fluxo?node-id=0-1)
+
+### User Flow
+
+[Userflow do Projeto](https://www.figma.com/design/njJzqfUmrD8CigO7nbO1EH/Doa%C3%A7%C3%A3o-de-sangue-%E2%80%94-Wireframes-e-fluxo?node-id=12-13)
+
+### Protótipo Interativo
+
+[Prototipo Interativo](https://marvelapp.com/prototype/d4f07df/screen/99058085)
+
+# Metodologia
+
+Detalhes sobre a organização do grupo e o ferramental empregado.
+
+## Abordagem de Trabalho
+
+O projeto segue o processo proposto pela disciplina, que combina Design Thinking e desenvolvimento ágil.
+
+Na fase de **Design Thinking**, passamos pelas etapas de:
+
+- **Empatia:** matriz CSD, mapa de stakeholders, roteiro e entrevistas qualitativas, highlights de pesquisa;
+- **Definição:** personas, mapas de empatia e proposta de valor;
+- **Ideação:** requisitos e priorização;
+- **Prototipagem:** wireframes, user flow e protótipo interativo.
+
+Na fase de **desenvolvimento ágil**, o sistema será construído em três sprints:
+
+1. **Sprint 1:** layout e cadastros;
+2. **Sprint 2:** fluxos principais (pré-triagem, agendamento e alertas);
+3. **Sprint 3:** integração, testes e avaliação final, seguida da implantação e da apresentação.
+
+A equipe se reúne toda semana, presencialmente ou online, para revisar o andamento das tarefas e dividir as próximas. No dia a dia, a comunicação acontece pelo grupo de WhatsApp e pelo Discord(Com transmissão pelo Google Meet) .
+
+## Ferramentas
+
+Relação de ferramentas empregadas pelo grupo durante o projeto.
+
+| Ambiente | Plataforma | Link de acesso |
+| -------- | ---------- | -------------- |
+| Editor de Código | Visual Studio Code | [PREENCHER] |
+| Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2026-2-ti2-7587100-doacao |
+| Processo de Design Thinking | Miro | https://miro.com/app/board/uXjVHyO4Fhk=/ |
+| Wireframes e Protótipo Interativo | Figma | https://www.figma.com/design/njJzqfUmrD8CigO7nbO1EH/Doação-de-sangue-Wireframes-e-fluxo |
+| Controle de tarefas (Kanban) | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PPLES-TI/projects/914 |
+| Comunicação | WhatsApp | Grupo interno |
+| Comunicação | Discord | Grupo interno |
