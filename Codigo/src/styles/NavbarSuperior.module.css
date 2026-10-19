@@ -1,0 +1,102 @@
+/* Navbar principal */
+.navbarSuperior {
+    width: 100%;
+}
+
+/* Container centralizado */
+.navbarContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.navbarLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.navbarLogo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Área dos botões */
+.navbarActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botão Tire dúvidas */
+.navbarButton {
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 20px;
+
+    background-color: #ffffff;
+    border: 2px solid #95848b;
+    border-radius: 9999px;
+
+    color: #000000;
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+}
+
+.navbarButton:hover {
+    background-color: #f9fafb;
+}
+
+/* Ícone do botão */
+.navbarButtonIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #49444b;
+}
+
+/* Texto do botão */
+.navbarButton span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Responsividade para celulares */
+
+@media (max-width: 480px) {
+    .navbarContainer {
+        padding: 12px;
+    }
+
+    .navbarLogo img {
+        height: 48px;
+    }
+
+    .navbarButton {
+        height: 42px;
+        padding: 0 14px;
+        gap: 6px;
+    }
+
+    .navbarButton span {
+        font-size: 15px;
+    }
+
+    .navbarButtonIcon {
+        width: 18px;
+        height: 18px;
+    }
+}
