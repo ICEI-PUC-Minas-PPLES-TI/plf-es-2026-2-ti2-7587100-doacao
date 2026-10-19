@@ -1,18 +1,19 @@
-import "../styles/globals.css";
-import "../styles/MobileSidebar.css";
-import "../styles/NavbarSuperior.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import "@/styles/globals.css";
 
-import MobileSidebar from "../components/MobileSidebar";
-import NavbarSuperior from "../components/NavbarSuperior";
+import MobileSidebar from "@/components/MobileSidebar";
+import NavbarSuperior from "@/components/NavbarSuperior";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <NavbarSuperior />
-      <main className="page-content">
+      <MobileSidebar />
+
+      <main className="pt-1 pb-5">
         <Component {...pageProps} />
       </main>
-      <MobileSidebar />
     </>
   );
 }
