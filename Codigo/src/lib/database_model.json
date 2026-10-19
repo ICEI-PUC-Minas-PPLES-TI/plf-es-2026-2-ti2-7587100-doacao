@@ -1,0 +1,345 @@
+{
+  "usuarios": [
+    {
+      "_id": "670000000000000000001001",
+      "nome": "Ana Silva",
+      "email": "ana.silva@email.com",
+      "dataNascimento": "1995-05-02",
+      "sexo": "FEMININO",
+      "tipoSanguineo": "A+",
+      "tipoConfirmado": true,
+      "fotoUrl": "https://example.org/imagens/ana.jpg",
+      "biografia": "Quero incentivar novas pessoas a doar.",
+      "jaDoouAntes": false,
+      "papeis": ["USUARIO"],
+      "centroId": null,
+      "preferencias": {
+        "notificacoes": ["ESTOQUE", "CAMPANHA", "PEDIDO_COMPATIVEL", "AGENDAMENTO", "RETORNO", "REENGAJAMENTO", "VERIFICACAO_PEDIDO"],
+        "raioKm": 5,
+        "mostrarTipoNoCompartilhamento": false
+      },
+      "preTriagens": [
+        {
+          "versaoQuestionario": 1,
+          "realizadaEm": "2026-09-15T12:00:00Z",
+          "respostas": {
+            "PT-01": "1995-05-02",
+            "PT-02": 65.5,
+            "PT-03": false,
+            "PT-04": "Nenhuma condição informada.",
+            "PT-05": false,
+            "PT-06": false,
+            "PT-07": false,
+            "PT-08": null
+          },
+          "orientacao": "CONTINUAR",
+          "motivo": null,
+          "dataRetorno": null
+        }
+      ],
+      "conquistas": [
+        {
+          "conquistaId": "67000000000000000000c001",
+          "obtidaEm": "2026-09-16T12:00:00Z"
+        }
+      ],
+      "criadoEm": "2026-09-01T12:00:00Z"
+    },
+    {
+      "_id": "670000000000000000001002",
+      "nome": "Bruno Lima",
+      "email": "bruno.lima@email.com",
+      "dataNascimento": "1998-08-12",
+      "sexo": "MASCULINO",
+      "tipoSanguineo": null,
+      "tipoConfirmado": false,
+      "fotoUrl": null,
+      "biografia": "Participo da comunidade e organizo pedidos de ajuda.",
+      "jaDoouAntes": false,
+      "papeis": ["USUARIO"],
+      "centroId": null,
+      "preferencias": {
+        "notificacoes": ["ESTOQUE", "CAMPANHA", "PEDIDO_COMPATIVEL", "AGENDAMENTO", "RETORNO", "REENGAJAMENTO", "VERIFICACAO_PEDIDO"],
+        "raioKm": 5,
+        "mostrarTipoNoCompartilhamento": false
+      },
+      "preTriagens": [
+        {
+          "versaoQuestionario": 1,
+          "realizadaEm": "2026-10-06T12:00:00Z",
+          "respostas": {
+            "PT-01": "1998-08-12",
+            "PT-02": 72,
+            "PT-03": true,
+            "PT-04": "Dúvida a esclarecer com a equipe.",
+            "PT-05": false,
+            "PT-06": false,
+            "PT-07": false,
+            "PT-08": null
+          },
+          "orientacao": "BUSCAR_ESCLARECIMENTO",
+          "motivo": "O usuário relatou dúvida que exige avaliação da instituição.",
+          "dataRetorno": null
+        }
+      ],
+      "conquistas": [],
+      "criadoEm": "2026-09-01T13:00:00Z"
+    },
+    {
+      "_id": "670000000000000000001003",
+      "nome": "Clara Martins",
+      "email": "clara.martins@email.com",
+      "dataNascimento": "1990-03-10",
+      "sexo": "FEMININO",
+      "tipoSanguineo": null,
+      "tipoConfirmado": false,
+      "fotoUrl": null,
+      "biografia": "Integrante da equipe de conteúdo e atendimento.",
+      "jaDoouAntes": true,
+      "papeis": ["USUARIO", "EQUIPE_TECNICA", "EQUIPE_CONTEUDO"],
+      "centroId": "670000000000000000002002",
+      "preferencias": {
+        "notificacoes": ["ESTOQUE", "CAMPANHA", "PEDIDO_COMPATIVEL", "AGENDAMENTO", "RETORNO", "REENGAJAMENTO", "VERIFICACAO_PEDIDO"],
+        "raioKm": 5,
+        "mostrarTipoNoCompartilhamento": false
+      },
+      "preTriagens": [],
+      "conquistas": [],
+      "criadoEm": "2026-09-01T11:00:00Z"
+    }
+  ],
+  "centros": [
+    {
+      "_id": "670000000000000000002001",
+      "nome": "Hemocentro de Belo Horizonte",
+      "hospital": false,
+      "endereco": "Alameda Ezequiel Dias, 321",
+      "bairro": "Santa Efigênia",
+      "lat": -19.924653,
+      "lng": -43.931722,
+      "horarioFuncionamento": "Seg a sex, 7h às 18h. Sáb, 7h às 13h (entrada de doadores até 12h).",
+      "estoque": {
+        "A+": "BAIXO"
+      },
+      "estoqueAtualizadoEm": "2026-10-06T10:00:00Z"
+    },
+    {
+      "_id": "670000000000000000002002",
+      "nome": "Unidade de Coleta do Hospital Júlia Kubitschek",
+      "hospital": true,
+      "endereco": "Avenida Doutor Cristiano Rezende, 2505 (Emergência do HJK)",
+      "bairro": "Araguaia",
+      "lat": -19.989264,
+      "lng": -43.996600,
+      "horarioFuncionamento": "Seg a sáb, 7h às 12h.",
+      "estoque": {},
+      "estoqueAtualizadoEm": null
+    },
+    {
+      "_id": "670000000000000000002003",
+      "nome": "Posto de Coleta Estação BH",
+      "hospital": false,
+      "endereco": "Avenida Cristiano Machado, 11.833, loja 4002B (Shopping Estação BH)",
+      "bairro": "Vila Clóris",
+      "lat": -19.820499,
+      "lng": -43.946991,
+      "horarioFuncionamento": "Seg a sex, 8h às 18h30.",
+      "estoque": {},
+      "estoqueAtualizadoEm": null
+    }
+  ],
+  "chamados": [
+    {
+      "_id": "670000000000000000005001",
+      "tipo": "CAMPANHA",
+      "titulo": "Setembro Solidário",
+      "descricao": "Campanha fictícia para mobilizar doadores e reforçar o estoque da unidade.",
+      "centroId": "670000000000000000002001",
+      "tiposSanguineos": ["A+", "O-"],
+      "inicio": "2026-09-16T10:00:00Z",
+      "fim": "2026-09-16T17:00:00Z",
+      "urgente": false,
+      "criadoPor": null,
+      "status": "CONFIRMADO"
+    },
+    {
+      "_id": "67000000000000000000f001",
+      "tipo": "PEDIDO",
+      "titulo": "Doação para J. R. S.",
+      "descricao": null,
+      "centroId": "670000000000000000002002",
+      "tiposSanguineos": ["A+"],
+      "inicio": "2026-09-10T09:00:00Z",
+      "fim": null,
+      "urgente": true,
+      "criadoPor": "670000000000000000001002",
+      "status": "CONFIRMADO",
+      "motivoRecusa": null,
+      "verificadoPor": "670000000000000000001003",
+      "verificadoEm": "2026-09-11T10:00:00Z",
+      "paciente": {
+        "nome": "José Ribeiro dos Santos",
+        "tipoSanguineo": "A+"
+      },
+      "documentoUrl": "privado/pedidos/jose/declaracao.pdf",
+      "autorizacaoPor": "PACIENTE"
+    },
+    {
+      "_id": "67000000000000000000f002",
+      "tipo": "PEDIDO",
+      "titulo": "Doação para M. O. C.",
+      "descricao": null,
+      "centroId": "670000000000000000002002",
+      "tiposSanguineos": [],
+      "inicio": "2026-10-06T11:00:00Z",
+      "fim": null,
+      "urgente": false,
+      "criadoPor": "670000000000000000001002",
+      "status": "EM_VERIFICACAO",
+      "motivoRecusa": null,
+      "verificadoPor": null,
+      "verificadoEm": null,
+      "paciente": {
+        "nome": "Marina Oliveira Costa",
+        "tipoSanguineo": null
+      },
+      "documentoUrl": "privado/pedidos/marina/declaracao.jpg",
+      "autorizacaoPor": "RESPONSAVEL"
+    }
+  ],
+  "doacoes": [
+    {
+      "_id": "67000000000000000000a001",
+      "usuarioId": "670000000000000000001001",
+      "centroId": "670000000000000000002001",
+      "chamadoId": "67000000000000000000f001",
+      "dataHora": "2026-09-16T11:00:00Z",
+      "status": "REALIZADA",
+      "volumeMl": 450,
+      "criadoEm": "2026-09-15T12:05:00Z"
+    },
+    {
+      "_id": "67000000000000000000a002",
+      "usuarioId": "670000000000000000001002",
+      "centroId": "670000000000000000002001",
+      "chamadoId": null,
+      "dataHora": "2026-10-10T11:00:00Z",
+      "status": "AGENDADA",
+      "volumeMl": null,
+      "criadoEm": "2026-10-05T14:00:00Z"
+    }
+  ],
+  "publicacoes": [
+    {
+      "_id": "670000000000000000010001",
+      "tipo": "POST",
+      "autorId": "670000000000000000001001",
+      "texto": "Fiz minha primeira doação e fui bem acolhida pela equipe.",
+      "imagemUrl": "https://example.org/imagens/comunidade-encontro.jpg",
+      "curtidas": ["670000000000000000001002"],
+      "comentarios": [
+        {
+          "autorId": "670000000000000000001002",
+          "texto": "Obrigado por compartilhar sua experiência!",
+          "criadoEm": "2026-09-16T18:15:00Z"
+        }
+      ],
+      "criadoEm": "2026-09-16T18:00:00Z"
+    },
+    {
+      "_id": "670000000000000000015001",
+      "tipo": "PERGUNTA",
+      "autorId": "670000000000000000001002",
+      "titulo": "Como encontro o local da minha reserva?",
+      "texto": "Já tenho um agendamento. Onde consulto os dados da unidade?",
+      "curtidas": [],
+      "comentarios": [
+        {
+          "autorId": "670000000000000000001003",
+          "texto": "Na confirmação do agendamento, consulte a unidade, o local, a data, o horário e as orientações.",
+          "criadoEm": "2026-10-05T16:20:00Z"
+        }
+      ],
+      "criadoEm": "2026-10-05T16:00:00Z"
+    },
+    {
+      "_id": "670000000000000000013001",
+      "tipo": "EVENTO",
+      "autorId": "670000000000000000001002",
+      "titulo": "Roda de conversa entre doadores",
+      "texto": "Encontro comunitário para trocar experiências; não é uma campanha oficial de coleta.",
+      "inicio": "2026-10-12T12:00:00Z",
+      "fim": "2026-10-12T13:00:00Z",
+      "localNome": "Centro Comunitário Exemplo",
+      "endereco": "Rua da Comunidade, 50, sala 1, Centro",
+      "lat": -19.918,
+      "lng": -43.9375,
+      "participantes": ["670000000000000000001001", "670000000000000000001002"],
+      "curtidas": [],
+      "comentarios": [],
+      "criadoEm": "2026-10-05T15:00:00Z"
+    }
+  ],
+  "chat": [
+    {
+      "_id": "670000000000000000017001",
+      "usuarioId": "670000000000000000001002",
+      "titulo": "Como consultar o agendamento",
+      "mensagens": [
+        {
+          "emissor": "USUARIO",
+          "texto": "O agendamento garante que não vou esperar?",
+          "fontes": [],
+          "criadoEm": "2026-10-05T17:00:00Z"
+        },
+        {
+          "emissor": "ASSISTENTE",
+          "texto": "O agendamento organiza a visita, mas não garante ausência de espera. Dúvidas específicas devem ser esclarecidas com a unidade.",
+          "fontes": [
+            {
+              "titulo": "Descrição do Minimundo — DoAção",
+              "pagina": 2
+            }
+          ],
+          "criadoEm": "2026-10-05T17:00:02Z"
+        }
+      ],
+      "criadaEm": "2026-10-05T17:00:00Z"
+    }
+  ],
+  "quizzes": [
+    {
+      "_id": "67000000000000000001a001",
+      "titulo": "Entendendo o agendamento",
+      "questoes": [
+        {
+          "codigo": "QZ-01",
+          "enunciado": "O agendamento garante ausência de espera?",
+          "alternativas": [
+            { "codigo": "A", "texto": "Sim." },
+            { "codigo": "B", "texto": "Não." }
+          ],
+          "correta": "B",
+          "explicacao": "A reserva organiza a visita, mas o tempo de espera depende do atendimento na unidade.",
+          "fonte": {
+            "titulo": "Descrição do Minimundo — DoAção",
+            "pagina": 2
+          }
+        }
+      ]
+    }
+  ],
+  "conquistas": [
+    {
+      "_id": "67000000000000000000c001",
+      "nome": "Primeira doação",
+      "descricao": "Registro da primeira doação efetivamente realizada.",
+      "criterio": {
+        "atividade": "DOACOES_REALIZADAS",
+        "quantidade": 1,
+        "janelaMeses": null
+      }
+    }
+  ],
+  "justificativaModelagem": "Reduzimos o modelo a oito coleções. O que só existe por causa de um registro ficou dentro dele: as pré-triagens e as conquistas obtidas ficam no cadastro do usuário, o estoque fica no centro, os dados do paciente ficam no pedido, e comentários, curtidas e participantes ficam na publicação. Cada pré-triagem guarda a versão do questionário e usa o código das perguntas, porque as perguntas seguem os critérios da Hemominas e mudam quando a regulamentação muda.\n\nHospitais e unidades de coleta formam uma única coleção, centros, porque a plataforma só trabalha com hospitais que também coletam sangue. O campo hospital indica qual é qual. Campanhas e pedidos de doação ficam em chamados, já que os dois convocam doadores para um centro e para certos tipos sanguíneos. O campo tipo separa os dois, e só o pedido tem paciente, documento e verificação. Agendamento e doação são o mesmo registro em momentos diferentes, indicados pelo status. Feed, fórum e eventos da comunidade ficam em publicacoes, separados pelo tipo.\n\nQuizzes e conquistas têm coleções próprias porque o aplicativo sorteia perguntas e avalia critérios a partir deles. O chat também, para que a pessoa consulte as conversas anteriores com o assistente. As perguntas da pré-triagem e os textos de orientação ficam no código do aplicativo, e as notificações são enviadas na hora, sem registro."
+}
