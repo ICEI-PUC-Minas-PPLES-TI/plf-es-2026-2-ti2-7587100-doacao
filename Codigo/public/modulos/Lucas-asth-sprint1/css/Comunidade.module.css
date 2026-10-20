@@ -1,3 +1,16 @@
+.community {
+  --wine: #d20a4d;
+  --wine-dark: #a7083e;
+  --pink-bg: #f9e9ef;
+  --pink-soft: #fff5f8;
+  --ink: #252127;
+  --muted: #6d6268;
+  --line: #ead7de;
+  --white: #fff;
+  --shadow: 0 8px 28px rgba(91, 36, 57, .10);
+  color: var(--ink);
+}
+
 .community { width: min(100%, 720px); margin: 0 auto; padding: 8px 22px 105px; }
 .intro { padding: 8px 0 20px; }
 .success { padding: 16px; border: 1px solid #42805b; border-radius: 12px; background: #edf7ef; color: #205b34; line-height: 1.5; }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from "react";
-import styles from "../../styles/Comunidade.module.css";
+import styles from "../../../public/modulos/Lucas-asth-sprint1/css/Comunidade.module.css";
 import { lerCadastros } from '../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
 
 function normalizarTexto(valor = "") {

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { salvarCadastro, validarCadastro, lerCadastros, editarCadastro } from '../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
-import styles from '../../styles/CadastroEvento.module.css';
+import styles from '../../../public/modulos/Lucas-asth-sprint1/css/CadastroEvento.module.css';
 
 export default function CadastroEvento() {
   const router = useRouter();

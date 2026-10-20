@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { lerCadastros, excluirCadastro } from '../../../../public/modulos/Lucas-asth-sprint1/js/cadastro';
 import Link from "next/link";
-import styles from "../../../styles/EventoDetalhes.module.css";
+import styles from "../../../../public/modulos/Lucas-asth-sprint1/css/EventoDetalhes.module.css";
 
 export default function EventoDetalhes() {
   const router = useRouter();

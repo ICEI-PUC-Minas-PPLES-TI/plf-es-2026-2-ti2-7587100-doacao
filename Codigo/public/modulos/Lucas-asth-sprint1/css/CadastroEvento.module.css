@@ -1,3 +1,16 @@
+.page {
+  --wine: #d20a4d;
+  --wine-dark: #a7083e;
+  --pink-bg: #f9e9ef;
+  --pink-soft: #fff5f8;
+  --ink: #252127;
+  --muted: #6d6268;
+  --line: #ead7de;
+  --white: #fff;
+  --shadow: 0 8px 28px rgba(91, 36, 57, .10);
+  color: var(--ink);
+}
+
 .page { width: min(100%, 720px); margin: 0 auto; padding: 16px 22px 120px; box-sizing: border-box; line-height: 1.5; }
 .page h1 { font-size: clamp(28px, 6vw, 40px); margin-bottom: 12px; }
 .page a { color: #9e003b; font-weight: 700; }
