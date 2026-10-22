@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de hemocentro</title>
+</head>
+<body>
+    <div>
+        <h1>Cadastro de hemocentro</h1>
+        <h5>Informe os dados do seu centro de coleta (* obrigatório)</h5>
+    </div>
+    <form action="" method="post">
+        <div class="Preencher">
+            <div id="Nome">
+                <h4>Nome do hemocentro *</h4>
+                <input type="text" placeholder="Ex.: Hemocentro Regional" required>
+            </div>
+            
+            <div id="Endereço">
+                <h4>Endereço *</h4>
+                <input type="text" placeholder="Rua, número e bairro" required>
+            </div>
+
+            <div id="Cidade">
+                <h4>Cidade *</h4>
+                <input type="text" placeholder="Ex.: Belo Horizonte" required >
+            </div>
+
+            <div id="UF">
+                <h4>UF *</h4>
+                <select name="uf" id="uf" required>
+                    <option value="" selected disabled>UF</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+
+            <div id="Horario">
+                <h4>Horário de funcionamento</h4>
+                <input type="checkbox" id="seg" name="dias[]" value="Seg">
+                <label for="seg">Seg</label>
+
+                <input type="checkbox" id="ter" name="dias[]" value="Ter">
+                <label for="ter">Ter</label>
+
+                <input type="checkbox" id="qua" name="dias[]" value="Qua">
+                <label for="qua">Qua</label>
+
+                <input type="checkbox" id="qui" name="dias[]" value="Qui">
+                <label for="qui">Qui</label>
+
+                <input type="checkbox" id="sex" name="dias[]" value="Sex">
+                <label for="sex">Sex</label>
+
+                <input type="checkbox" id="sab" name="dias[]" value="Sáb">
+                <label for="sab">Sáb</label>
+
+                <input type="checkbox" id="dom" name="dias[]" value="Dom">
+                <label for="dom">Dom</label>
+
+                <h5>Abre às *</h5>
+                <input type="time" id="Abertura" name="horarioDeAbertura" required>
+
+                <h5>Fecha às *</h5>
+                <input type="time" id="Fechamento" name="horarioDeFechamento" required>
+            </div>
+
+            <div id="Localizacao">
+                <h5>Latitude *</h5>
+                <input type="number" id="Latitude" name="latitude" placeholder="Ex: -19.9208" required>
+                <h5>Longitude *</h5>
+                <input type="number" id="Longitude" name="longitude" placeholder="Ex: -43.9378" required>
+            </div>
+        </div>
+        <div id="salvar">
+            <button type="submit" > Cadastrar hemocentro</button>
+        </div>
+    </form>
+    <script src="./cadastroLocais.js"></script>
+</body>
+</html>
