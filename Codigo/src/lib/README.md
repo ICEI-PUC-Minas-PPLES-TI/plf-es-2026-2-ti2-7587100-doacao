@@ -1,5 +1,6 @@
+
 # src/lib
 
-**Banco de dados (MongoDB Atlas) fica aqui.**
+**Banco de dados**
 
-Aqui entra o arquivo `mongodb.js` (conexão única e reutilizada). Só código de servidor importa este arquivo, nunca componentes ou páginas do cliente.
+Requisições ficam sobre responsabilidade do RESTHeart.
