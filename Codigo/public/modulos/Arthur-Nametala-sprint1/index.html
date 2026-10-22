@@ -14,6 +14,28 @@
   <p id="status" role="status"></p>
   <ul id="lista"></ul>
 
-  <script type="module" src="./cadastro-doacoes.js"></script>
+  <form id="form-doacao" hidden>
+    <p>Centro escolhido: <strong id="centro-escolhido"></strong></p>
+
+    <label for="data-hora">Data e hora da doação</label>
+    <input id="data-hora" type="datetime-local" required>
+
+    <label for="volume">Volume (mL)</label>
+    <input id="volume" type="number" min="1" required>
+
+    <button type="submit">Registrar doação</button>
+  </form>
+
+  <button id="desfazer" type="button" hidden>Desfazer último registro</button>
+   <!-- metodo que inicia escondido, aparece quando chama showModal() e some quando outro botao é clicado-->
+  <dialog id="confirmacao">
+    <form method="dialog">
+      <p>Você confirma que realizou essa doação?</p>
+      <button value="cancelar">Cancelar</button>
+      <button value="confirmar">Confirmo que realizei essa doação</button>
+    </form>
+  </dialog>
+
+  <script src="./cadastro-doacoes.js"></script>
 </body>
 </html>
