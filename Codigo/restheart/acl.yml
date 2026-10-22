@@ -1,10 +1,12 @@
-# Permissoes do RESTHeart (fileAclAuthorizer). Maior priority e avaliada primeiro.
+# Permissoes do RESTHeart (acl authorizer)
 permissions:
   # admin pode tudo
   - role: admin
     predicate: path-prefix('/')
     priority: 0
-  # qualquer pessoa, sem login, pode apenas LER os centros de coleta
+  # obs: qualquer pessoa pode alterar, com ou sem login
+  # TEMOS QUE ALTERAR QUANDO HOSPEDAR
+  # ANTES DE HOSPEDAR tem que restringir 
   - role: $unauthenticated
-    predicate: method(GET) and path-prefix('/centros')
+    predicate: path-prefix('/')
     priority: 10
