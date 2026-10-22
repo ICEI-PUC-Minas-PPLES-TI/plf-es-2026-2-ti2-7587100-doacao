@@ -8,3 +8,13 @@ permissions:
   - role: $unauthenticated
     predicate: method(GET) and path-prefix('/centros')
     priority: 10
+  # Somente consulta de eventos. Não libera documentos individuais, agregações ou gravação.
+  - roles: ['$unauthenticated']
+    predicate: method(GET) and path('/publicacoes') and qparams-whitelist(filter, page, pagesize, sort)
+    priority: 100
+    mongo:
+      readFilter: '{"tipo": "EVENTO"}'
+      projectResponse: >-
+        {"_id": 1, "tipo": 1, "titulo": 1, "texto": 1, "inicio": 1,
+         "localNome": 1, "endereco": 1,
+         "totalParticipantes": 1}
