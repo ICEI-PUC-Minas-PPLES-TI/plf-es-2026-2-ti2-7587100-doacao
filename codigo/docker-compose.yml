@@ -1,0 +1,20 @@
+# Sobe o RESTHeart na frente do MongoDB Atlas.
+# Uso: docker compose --env-file .env.local up
+services:
+  restheart:
+    image: softinstigate/restheart:latest
+    ports:
+      - "127.0.0.1:8080:8080" # porta apenas pra localhost PRECISA ALTERAR QUANDO SUBIR PRA HOSPEDAGEM
+    volumes:
+      - ./restheart/acl.yml:/opt/restheart/etc/acl.yml:ro
+    environment:
+      # porta listener 0.0.0 faz o RESTHeart ouvir conexoes de fora do container. O 8080 nao chega sem isso
+      # mclient é string de conexao do Atlas
+      # mongo-mount: banco montado na raiz, o GET acontece em /centro ao inves de /doacao/centro
+      # conf-file: permissoes, quem pode ver o que dependendo da função 
+      RHO: >-
+        /http-listener/host->"0.0.0.0"; 
+        /mclient/connection-string->"${MONGODB_URI}";
+        /mongo/mongo-mounts[1]/what->"/${MONGODB_DB}";
+        /fileAclAuthorizer/enabled->true;
+        /fileAclAuthorizer/conf-file->"/opt/restheart/etc/acl.yml"
