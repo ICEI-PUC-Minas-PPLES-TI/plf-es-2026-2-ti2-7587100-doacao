@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useAutenticacao } from '../../autenticacao/contexto';
 import styles from '../../../../public/modulos/Lucas-asth-sprint1/css/EventoDetalhes.module.css';
 
 export default function EventoDetalhes() {
   const router = useRouter();
+  const { usuario } = useAutenticacao();
   const [evento, setEvento] = useState(null);
   const [erro, setErro] = useState('');
   const [tentativa, setTentativa] = useState(0);
@@ -23,7 +25,7 @@ export default function EventoDetalhes() {
       .then(dados => { if (!controle.signal.aborted) setEvento(dados); })
       .catch(falha => { if (!controle.signal.aborted) setErro(falha.message || 'Não foi possível consultar o evento.'); });
     return () => controle.abort();
-  }, [router.isReady, router.query.id, tentativa]);
+  }, [router.isReady, router.query.id, tentativa, usuario?.id]);
 
   if (!evento) return <section className={styles.page}>
     <Link href="/comunidade">← Voltar para eventos</Link>
@@ -44,9 +46,17 @@ export default function EventoDetalhes() {
 
   return (
     <article className={styles.page}>
-        <Link href="/comunidade" className={styles.back}>
-          <span aria-hidden="true">←</span> Voltar para eventos
-        </Link>
+        <nav className={styles.eventToolbar} aria-label="Ações do evento">
+          <Link href="/comunidade" className={styles.back}>
+            <span aria-hidden="true">←</span> Voltar para eventos
+          </Link>
+          {usuario && evento.podeEditar && <Link href={'/comunidade/eventos/' + evento.id + '/editar'} className={styles.editButton}>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m16 3 5 5M4 20l4-1L21 6a2.8 2.8 0 0 0-4-4L4 15l-1 6Z" />
+            </svg>
+            Editar evento
+          </Link>}
+        </nav>
 
         <section className={styles.hero}>
           <div className={styles.date}><strong>{dia}</strong><span>{mes}</span></div>

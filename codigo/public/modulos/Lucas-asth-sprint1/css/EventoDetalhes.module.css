@@ -229,6 +229,36 @@
   font-size: 13px;
 }
 
+.eventToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 4px 0 20px;
+}
+.eventToolbar .back { min-height: 44px; margin: 0; font-weight: 600; }
+.editButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  margin-left: auto;
+  border: 1px solid #b7738b;
+  border-radius: 8px;
+  background: white;
+  color: var(--wine-dark);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+.editButton svg { flex-shrink: 0; }
+.editButton:hover { color: var(--wine-dark); background: var(--pink-soft); border-color: var(--wine-dark); }
+.eventToolbar a:focus-visible { outline: 3px solid var(--wine-dark); outline-offset: 4px; }
+
 @media (max-width: 680px) {
   .page {
     padding-right: 16px;

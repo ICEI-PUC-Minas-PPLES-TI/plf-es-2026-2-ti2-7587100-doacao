@@ -43,9 +43,11 @@ it('bloqueia gravação e filtros ou ids enviados fora do contrato', async () =>
     const resposta = criarResposta();
     await listar({ method, query: {} }, resposta);
     expect(resposta.codigo).toBe(405);
-    const respostaDetalhe = criarResposta();
-    await detalhe({ method, query: { id: '670000000000000000013001' } }, respostaDetalhe);
-    expect(respostaDetalhe.codigo).toBe(405);
+    if (method !== 'PUT') {
+      const respostaDetalhe = criarResposta();
+      await detalhe({ method, query: { id: '670000000000000000013001' } }, respostaDetalhe);
+      expect(respostaDetalhe.codigo).toBe(405);
+    }
   }
   const respostaPostDetalhe = criarResposta();
   await detalhe({ method: 'POST', query: { id: '670000000000000000013001' } }, respostaPostDetalhe);

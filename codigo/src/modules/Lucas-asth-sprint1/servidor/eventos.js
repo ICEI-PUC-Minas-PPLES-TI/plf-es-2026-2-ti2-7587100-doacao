@@ -11,9 +11,9 @@ export function idValido(id) {
 export function apresentarEvento(documento) {
   if (!documento || documento.tipo !== 'EVENTO') return null;
   let id = documento._id;
-  if (id && typeof id === 'object') id = id.$oid;
+  if (id && typeof id === 'object') id = typeof id.toHexString === 'function' ? id.toHexString() : id.$oid;
   let inicio = documento.inicio;
-  if (inicio && typeof inicio === 'object') inicio = inicio.$date;
+  if (inicio && typeof inicio === 'object' && !(inicio instanceof Date)) inicio = inicio.$date;
   const data = new Date(inicio);
   if (!idValido(id) || !inicio || !Number.isFinite(data.getTime()) || typeof documento.titulo !== 'string') return null;
 

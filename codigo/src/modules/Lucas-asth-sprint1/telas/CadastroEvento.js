@@ -4,9 +4,10 @@ import { useAutenticacao } from '../../autenticacao/contexto';
 import { validarEvento } from '../validarEvento';
 import styles from '../../../../public/modulos/Lucas-asth-sprint1/css/CadastroEvento.module.css';
 
-export default function CadastroEvento() {
+export default function CadastroEvento({ eventoInicial = null }) {
+  const editando = Boolean(eventoInicial);
   const { usuario, carregando, erro: erroAcesso, atualizarUsuario } = useAutenticacao();
-  const [dados, setDados] = useState({ nome: '', descricao: '', data: '', horario: '', local: '', endereco: '' });
+  const [dados, setDados] = useState({ nome: eventoInicial?.nome || '', descricao: eventoInicial?.descricao || '', data: eventoInicial?.data || '', horario: eventoInicial?.horario || '', local: eventoInicial?.local || '', endereco: eventoInicial?.endereco || '' });
   const [erros, setErros] = useState({});
   const [mensagem, setMensagem] = useState('');
   const [enviando, setEnviando] = useState(false);
@@ -34,20 +35,20 @@ export default function CadastroEvento() {
     ocupado.current = true;
     setEnviando(true);
     try {
-      const resposta = await fetch('/api/eventos', {
-        method: 'POST', credentials: 'same-origin', cache: 'no-store',
+      const resposta = await fetch(editando ? '/api/eventos/' + eventoInicial.id : '/api/eventos', {
+        method: editando ? 'PUT' : 'POST', credentials: 'same-origin', cache: 'no-store',
         headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(validacao.dados)
       });
       const resultado = await resposta.json();
       if (!resposta.ok) {
         setErros(resultado.erros || {});
-        setMensagem(resultado.mensagem || 'Não foi possível cadastrar o evento.');
+        setMensagem(resultado.mensagem || 'Não foi possível salvar o evento.');
         if (resposta.status === 401) atualizarUsuario(null);
         return;
       }
       setCriado(resultado.evento);
     } catch {
-      setMensagem('Não foi possível confirmar o cadastro. Confira a lista de eventos antes de tentar novamente.');
+      setMensagem('Não foi possível confirmar a gravação. Confira os dados do evento antes de tentar novamente.');
     } finally {
       ocupado.current = false;
       setEnviando(false);
@@ -66,18 +67,18 @@ export default function CadastroEvento() {
   return (
     <section className={styles.page}>
       <Link href="/comunidade">← Voltar para eventos</Link>
-      <h1>Cadastrar evento</h1>
+      <h1>{editando ? 'Editar evento' : 'Cadastrar evento'}</h1>
       {carregando ? <p role="status">Conferindo seu acesso…</p> : criado ? <div className={styles.panel}>
-        <p role="status"><strong>Evento cadastrado com sucesso!</strong></p>
+        <p role="status"><strong>{editando ? 'Evento atualizado com sucesso!' : 'Evento cadastrado com sucesso!'}</strong></p>
         <p>{criado.nome} já está salvo no banco.</p>
         <Link href={'/comunidade/eventos/' + criado.id}>Ver evento</Link>
         <Link href="/comunidade">Voltar para a lista</Link>
       </div> : !usuario ? <div className={styles.panel}>
-        <p role={mensagem || erroAcesso ? 'alert' : undefined}>{mensagem || erroAcesso || 'Entre na sua conta para cadastrar um evento.'}</p>
+        <p role={mensagem || erroAcesso ? 'alert' : undefined}>{mensagem || erroAcesso || 'Entre na sua conta para salvar o evento.'}</p>
         <Link href="/login" className={styles.primary}>Entrar</Link>
         <Link href="/cadastro">Criar conta</Link>
       </div> : <>
-        <p>Organize um encontro e mobilize a comunidade.</p>
+        <p>{editando ? 'Atualize as informações do seu evento.' : 'Organize um encontro e mobilize a comunidade.'}</p>
         <p className={styles.notice}>Todos os campos são obrigatórios. Use o horário de Brasília.</p>
         <form className={styles.panel} ref={formulario} onSubmit={enviar} noValidate aria-busy={enviando}>
           {campo('nome', 'Nome do evento', 'text', 120)}
@@ -89,7 +90,7 @@ export default function CadastroEvento() {
           {mensagem && <p className={styles.error} role="alert">{mensagem}</p>}
           <div className={styles.actions}>
             <Link href="/comunidade">Cancelar</Link>
-            <button className={styles.primary} type="submit" disabled={enviando}>{enviando ? 'Salvando…' : 'Cadastrar evento'}</button>
+            <button className={styles.primary} type="submit" disabled={enviando}>{enviando ? 'Salvando…' : editando ? 'Salvar alterações' : 'Cadastrar evento'}</button>
           </div>
         </form>
       </>}
