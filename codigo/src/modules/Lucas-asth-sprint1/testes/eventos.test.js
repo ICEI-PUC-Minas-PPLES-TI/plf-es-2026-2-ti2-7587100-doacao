@@ -39,7 +39,7 @@ function criarResposta() {
 it('bloqueia gravação e filtros ou ids enviados fora do contrato', async () => {
   const fetchTeste = vi.fn();
   vi.stubGlobal('fetch', fetchTeste);
-  for (const method of ['POST', 'PUT', 'PATCH', 'DELETE']) {
+  for (const method of ['PUT', 'PATCH', 'DELETE']) {
     const resposta = criarResposta();
     await listar({ method, query: {} }, resposta);
     expect(resposta.codigo).toBe(405);
@@ -47,6 +47,9 @@ it('bloqueia gravação e filtros ou ids enviados fora do contrato', async () =>
     await detalhe({ method, query: { id: '670000000000000000013001' } }, respostaDetalhe);
     expect(respostaDetalhe.codigo).toBe(405);
   }
+  const respostaPostDetalhe = criarResposta();
+  await detalhe({ method: 'POST', query: { id: '670000000000000000013001' } }, respostaPostDetalhe);
+  expect(respostaPostDetalhe.codigo).toBe(405);
   const resposta = criarResposta();
   await listar({ method: 'GET', query: { filter: '{}' } }, resposta);
   expect(resposta.codigo).toBe(400);

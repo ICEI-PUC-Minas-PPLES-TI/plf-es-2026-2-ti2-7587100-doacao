@@ -113,7 +113,7 @@ export default function Comunidade() {
 
       {abaAtiva === "eventos" && (
         <>
-          <p className={styles.message}>Cadastro, edição e exclusão estarão disponíveis após a integração do login.</p>
+          <Link href="/comunidade/cadastro" className={styles.createButton}>Cadastrar evento</Link>
 
           <label className={styles.search}>
             <span aria-hidden="true">⌕</span>
