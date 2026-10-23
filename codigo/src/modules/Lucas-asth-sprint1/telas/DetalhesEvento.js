@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useAutenticacao } from '../../autenticacao/contexto';
+import ExcluirEvento from './ExcluirEvento';
 import styles from '../../../../public/modulos/Lucas-asth-sprint1/css/EventoDetalhes.module.css';
 
 export default function EventoDetalhes() {
@@ -10,6 +11,12 @@ export default function EventoDetalhes() {
   const [evento, setEvento] = useState(null);
   const [erro, setErro] = useState('');
   const [tentativa, setTentativa] = useState(0);
+  const [excluido, setExcluido] = useState(false);
+  const [erroExclusao, setErroExclusao] = useState('');
+  const tituloSucesso = useRef(null);
+
+  useEffect(() => { if (excluido) tituloSucesso.current?.focus(); }, [excluido]);
+  useEffect(() => { setExcluido(false); setErroExclusao(''); }, [router.query.id]);
 
   useEffect(() => {
     if (!router.isReady || typeof router.query.id !== 'string') return;
@@ -27,6 +34,11 @@ export default function EventoDetalhes() {
     return () => controle.abort();
   }, [router.isReady, router.query.id, tentativa, usuario?.id]);
 
+  if (excluido) return <section className={styles.page}>
+    <h1 ref={tituloSucesso} tabIndex={-1}>Evento excluído</h1>
+    <p role="status">O evento foi removido com sucesso.</p>
+    <Link href="/comunidade" className={styles.back}>← Voltar para eventos</Link>
+  </section>;
   if (!evento) return <section className={styles.page}>
     <Link href="/comunidade">← Voltar para eventos</Link>
     <p role={erro ? 'alert' : 'status'}>{erro || 'Carregando evento…'}</p>
@@ -50,13 +62,14 @@ export default function EventoDetalhes() {
           <Link href="/comunidade" className={styles.back}>
             <span aria-hidden="true">←</span> Voltar para eventos
           </Link>
-          {usuario && evento.podeEditar && <Link href={'/comunidade/eventos/' + evento.id + '/editar'} className={styles.editButton}>
+          {usuario && evento.podeEditar && <div className={styles.eventActions}><Link href={'/comunidade/eventos/' + evento.id + '/editar'} className={styles.editButton}>
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="m16 3 5 5M4 20l4-1L21 6a2.8 2.8 0 0 0-4-4L4 15l-1 6Z" />
             </svg>
             Editar evento
-          </Link>}
+          </Link><ExcluirEvento evento={evento} onExcluido={() => setExcluido(true)} onErro={setErroExclusao} /></div>}
         </nav>
+        {erroExclusao && <p className={styles.error} role="alert">{erroExclusao}</p>}
 
         <section className={styles.hero}>
           <div className={styles.date}><strong>{dia}</strong><span>{mes}</span></div>

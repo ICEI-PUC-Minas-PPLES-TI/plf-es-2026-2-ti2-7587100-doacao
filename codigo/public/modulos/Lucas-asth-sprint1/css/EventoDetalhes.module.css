@@ -238,6 +238,10 @@
   margin: 4px 0 20px;
 }
 .eventToolbar .back { min-height: 44px; margin: 0; font-weight: 600; }
+.eventActions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.deleteTrigger { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 14px; border: 1px solid #b77a85; border-radius: 8px; background: white; color: #a11732; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; touch-action: manipulation; }
+.deleteTrigger:hover { background: #fff3f5; border-color: #a11732; }
+.deleteTrigger svg { flex-shrink: 0; }
 .editButton {
   display: inline-flex;
   align-items: center;

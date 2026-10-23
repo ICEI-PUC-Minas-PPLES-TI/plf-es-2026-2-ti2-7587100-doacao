@@ -23,6 +23,13 @@ export async function atualizarEvento(id, autorId, dados, inicio) {
   }, { returnDocument: 'after' });
 }
 
+export async function removerEvento(id, autorId) {
+  const { getDb } = await import('../../../lib/mongodb');
+  const db = await getDb();
+  const resultado = await db.collection('publicacoes').deleteOne(filtroDoAutor(id, autorId));
+  return resultado.deletedCount === 1;
+}
+
 export async function inserirEvento(dados, autorId, inicio) {
   const { getDb } = await import('../../../lib/mongodb');
   const db = await getDb();
