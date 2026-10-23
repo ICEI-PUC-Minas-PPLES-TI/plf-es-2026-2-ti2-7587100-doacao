@@ -1,0 +1,24 @@
+.pagina { max-width: 600px; margin: 24px auto; padding: 0 20px 100px; }
+.painel { background: #fff; border: 1px solid #eadde3; border-radius: 20px; padding: 32px; box-shadow: 0 8px 28px #4e15300d; }
+.marca { color: #9c285a; font-weight: 700; letter-spacing: .06em; }
+.painel h1 { color: #351528; font-size: clamp(1.7rem, 5vw, 2.1rem); }
+.painel p { line-height: 1.6; }
+.campo { display: flex; flex-direction: column; gap: 7px; margin-top: 20px; }
+.campo label { font-weight: 600; color: #351528; }
+.campo input { width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid #95848b; border-radius: 9px; background: #fff; color: #241822; }
+.campo input[aria-invalid="true"] { border-color: #a01937; }
+.pagina :is(input, button, a):focus-visible, .acesso :is(a, button):focus-visible { outline: 3px solid #b22c65; outline-offset: 3px; }
+.ajuda { font-size: .9rem; color: #5e4b56; margin-top: 8px; }
+.erro, .erroMenu { color: #a01937; font-size: .94rem; }
+.mostrar { min-height: 44px; padding: 6px 0; background: transparent; border: 0; color: #8b204e; text-decoration: underline; }
+.principal { min-height: 48px; width: 100%; background: #9b2859; color: white; border: 0; border-radius: 10px; padding: 12px; margin-top: 16px; font-weight: 600; }
+.principal:hover:not(:disabled) { background: #792046; }
+.principal:disabled, .acesso button:disabled { opacity: .65; cursor: wait; }
+.alternativa { margin: 22px 0 0; text-align: center; }
+.pagina a { color: #8b204e; font-weight: 600; }
+.acesso { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.acesso a, .acesso button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px; border: 1px solid #9b2859; border-radius: 999px; color: #812047; background: white; text-decoration: none; font-weight: 600; }
+.nome { max-width: 200px; overflow-wrap: anywhere; color: #351528; }
+.erroMenu { flex-basis: 100%; }
+.conectado { margin-top: 24px; }
+@media (max-width: 480px) { .painel { padding: 24px 18px; } .pagina { margin-top: 16px; padding-inline: 12px; } .acesso { gap: 8px; } }
