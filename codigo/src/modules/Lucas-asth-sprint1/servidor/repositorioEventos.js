@@ -17,7 +17,7 @@ export async function eventoDoAutor(id, autorId) {
 export async function atualizarEvento(id, autorId, dados, inicio) {
   const { getDb } = await import('../../../lib/mongodb');
   const db = await getDb();
-  // A autoria também faz parte do filtro da gravação, impedindo alterações em eventos de outra pessoa.
+  
   return db.collection('publicacoes').findOneAndUpdate(filtroDoAutor(id, autorId), {
     $set: { titulo: dados.nome, texto: dados.descricao, inicio, localNome: dados.local, endereco: dados.endereco, atualizadoEm: new Date().toISOString() }
   }, { returnDocument: 'after' });
